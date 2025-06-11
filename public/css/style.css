@@ -10,6 +10,7 @@ html, body {
   background: #fff;
   color: #111;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* NAVIGATION */
@@ -29,19 +30,27 @@ nav.nav ul {
 }
 
 nav.nav ul li {
-  color: #fff;
   font-weight: 500;
   cursor: pointer;
 }
 
-nav.nav ul li.active {
-  background: #fff;
-  color: #000;
+nav.nav ul li a {
+  color: #fff;
+  text-decoration: none;
   padding: 0.4rem 1rem;
   border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+nav.nav ul li a:hover {
+  background: #fff;
+  color: #000;
   font-weight: 700;
 }
 
+nav.nav ul li a.active {
+  font-weight: 700;
+}
 /* HERO */
 .hero {
   display: flex;
@@ -96,42 +105,39 @@ nav.nav ul li.active {
 
 /* SKILLS */
 .skills {
-  padding: 4rem 8%;
+  padding: 5rem 8%;
   text-align: center;
+  max-width: 1200px;
+  margin: auto; /* Centra la sección */
 }
 
 .skills .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 2rem auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* agranda los ítems */
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .skill {
   border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 2rem 1rem; /* más padding para agrandarlo */
+  border-radius: 10px;
   background: #fff;
+  transition: transform 0.3s ease;
 }
 
-.skill.highlight {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-}
-
-.skill.highlight img {
-  filter: brightness(0) invert(1);
+.skill:hover {
+  transform: translateY(-5px);
 }
 
 .skill img {
-  height: 40px;
-  margin-bottom: 0.5rem;
+  height: 75px; /* agrandado */
+  margin-bottom: 0.8rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 /* PROJECTS */
 .projects {
@@ -173,6 +179,26 @@ nav.nav ul li.active {
 .project .info p {
   font-size: 0.95rem;
   color: #ccc;
+}
+/*nuevo*/
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #c9c5b8;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.project-link .icon-link {
+  width: 1rem;
+  height: 1rem;
 }
 
 /* EXPERTISE */
@@ -325,6 +351,33 @@ nav.nav ul li.active {
   padding: 0.8rem 1.6rem;
   border-radius: 30px;
   text-decoration: none;
+}
+.footer-contact {
+  margin-top: 3rem;
+  padding: 3rem 8% 2rem; /* ← se agregó 8% de padding lateral */
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+
+.footer-contact p {
+  margin: 0;
+}
+
+.footer-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #888;
 }
 
 /* RESPONSIVE */
